@@ -17,6 +17,7 @@ import com.example.vuespringpjt.work.service.WorkService;
 
 
 
+
 @RestController
 public class WorkController {
 
@@ -59,6 +60,13 @@ public class WorkController {
         workService.updateWork(params); 
         return null ; 
     }
+
+    @GetMapping("jenkins")
+    public String debugMsg() {
+        System.out.println(">>> debug Work Ctrl GET: /jenkins");
+        return "success";
+    }
+    
 }
 
 
