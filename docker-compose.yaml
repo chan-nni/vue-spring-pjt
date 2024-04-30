@@ -7,13 +7,13 @@ services:
     # springboot
     app:
       container_name: work-container
-      # image: channni/springapp:
+      # build: .
+      image: channni/backend-spring-pjt:14b2858bf0563d80642b2c62cbcb155591a2f901
       depends_on:
         - database
       ports: 
         - "8972:8888"
       
-      build: .
       environment:
         SPRING_DATASOURCE_URL: jdbc:mariadb://database:3306/encore?useUnicode=true
         SPRING_DATASOURCE_USERNAME: work_user
